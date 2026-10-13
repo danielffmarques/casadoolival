@@ -875,6 +875,8 @@ button, input, select, textarea {
   text-transform: uppercase;
   z-index: 15;
   pointer-events: none;
+  transition: opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s;
+  will-change: opacity, transform;
 }
 
 .compare-label-before {

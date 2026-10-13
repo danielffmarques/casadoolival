@@ -90,15 +90,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const compareHandle = document.getElementById('compareHandle');
 
   if (compareWidget && compareSlider && compareOverlay && compareHandle) {
+    const compareLabelBefore = document.querySelector('.compare-label-before');
+    const compareLabelAfter = document.querySelector('.compare-label-after');
+
     const updateWidgetWidth = () => {
       const w = compareWidget.offsetWidth;
       compareWidget.style.setProperty('--widget-width', `${w}px`);
     };
 
     const updateCompare = (val) => {
-      compareOverlay.style.width = `${val}%`;
-      compareHandle.style.left = `${val}%`;
-      compareSlider.setAttribute('aria-valuenow', val);
+      const numVal = Number(val);
+      compareOverlay.style.width = `${numVal}%`;
+      compareHandle.style.left = `${numVal}%`;
+      compareSlider.setAttribute('aria-valuenow', numVal);
+
+      // Se a imagem da direita ("Depois") for visível na totalidade (slider à esquerda, numVal <= 10):
+      // O texto da esquerda ("Antes (2015)") desaparece completamente.
+      if (compareLabelBefore) {
+        if (numVal <= 10) {
+          compareLabelBefore.style.opacity = '0';
+          compareLabelBefore.style.visibility = 'hidden';
+          compareLabelBefore.style.transform = 'translateX(-6px)';
+        } else if (numVal < 25) {
+          const ratio = (numVal - 10) / 15;
+          compareLabelBefore.style.opacity = String(Math.max(0, Math.min(1, ratio)));
+          compareLabelBefore.style.visibility = 'visible';
+          compareLabelBefore.style.transform = `translateX(${Math.round((ratio - 1) * 6)}px)`;
+        } else {
+          compareLabelBefore.style.opacity = '1';
+          compareLabelBefore.style.visibility = 'visible';
+          compareLabelBefore.style.transform = 'translateX(0)';
+        }
+      }
+
+      // Se a imagem da esquerda ("Antes") for visível na totalidade (slider à direita, numVal >= 90):
+      // O texto da direita ("Depois (Hoje)") desaparece completamente.
+      if (compareLabelAfter) {
+        if (numVal >= 90) {
+          compareLabelAfter.style.opacity = '0';
+          compareLabelAfter.style.visibility = 'hidden';
+          compareLabelAfter.style.transform = 'translateX(6px)';
+        } else if (numVal > 75) {
+          const ratio = (90 - numVal) / 15;
+          compareLabelAfter.style.opacity = String(Math.max(0, Math.min(1, ratio)));
+          compareLabelAfter.style.visibility = 'visible';
+          compareLabelAfter.style.transform = `translateX(${Math.round((1 - ratio) * 6)}px)`;
+        } else {
+          compareLabelAfter.style.opacity = '1';
+          compareLabelAfter.style.visibility = 'visible';
+          compareLabelAfter.style.transform = 'translateX(0)';
+        }
+      }
     };
 
     updateWidgetWidth();
