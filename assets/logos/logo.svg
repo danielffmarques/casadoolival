@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 115" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente suave das folhas de oliveira -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ABC033" />
+      <stop offset="100%" stop-color="#7E8F1D" />
+    </linearGradient>
+
+    <!-- Gradiente subtil para as azeitonas com volume natural -->
+    <linearGradient id="oliveGrad" x1="20%" y1="10%" x2="90%" y2="90%">
+      <stop offset="0%" stop-color="#9CB028" />
+      <stop offset="65%" stop-color="#738318" />
+      <stop offset="100%" stop-color="#556210" />
+    </linearGradient>
+
+    <!-- Brilho translúcido na casca da azeitona -->
+    <linearGradient id="glossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E1EC7A" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#B2C43E" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Pedúnculos que ligam o ramo a cada azeitona -->
+  <g fill="none" stroke="#7A8B1C" stroke-width="2.6" stroke-linecap="round">
+    <path d="M 175 64 Q 182 74 188 84" />
+    <path d="M 230 65 Q 234 73 236 78" />
+    <path d="M 288 66 Q 296 74 302 82" />
+  </g>
+
+  <!-- Linhas orgânicas do ramo de oliveira -->
+  <g fill="none" stroke="#899B22" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 22 68 C 80 22, 160 25, 235 55 C 298 80, 350 48, 396 32" />
+    <path d="M 88 46 C 138 22, 198 32, 256 65" stroke-width="2.4" stroke="#728218" opacity="0.85" />
+  </g>
+
+  <!-- Folhas preenchidas estilizadas com nervuras naturais -->
+  <!-- Folha esquerda -->
+  <path d="M 45 62 C 90 32, 155 36, 188 65 C 145 76, 90 80, 45 62 Z" fill="url(#leafGrad)" />
+  <path d="M 52 61 C 95 40, 140 45, 180 64" fill="none" stroke="#D1E068" stroke-width="1.2" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Folha central/direita -->
+  <path d="M 188 56 C 235 26, 305 30, 352 48 C 304 68, 242 72, 188 56 Z" fill="url(#leafGrad)" />
+  <path d="M 198 54 C 242 34, 295 38, 342 47" fill="none" stroke="#D1E068" stroke-width="1.2" opacity="0.6" stroke-linecap="round" />
+
+  <!-- Três Azeitonas maduras com profundidade e volume -->
+  <g id="olives">
+    <!-- Azeitona 1 (Esquerda) -->
+    <g transform="rotate(-24 188 94)">
+      <ellipse cx="188" cy="94" rx="23" ry="16" fill="url(#oliveGrad)" />
+      <ellipse cx="184" cy="90" rx="9" ry="4.5" fill="url(#glossGrad)" />
+    </g>
+
+    <!-- Azeitona 2 (Meio) -->
+    <g transform="rotate(32 238 88)">
+      <ellipse cx="238" cy="88" rx="21" ry="15" fill="url(#oliveGrad)" />
+      <ellipse cx="234" cy="84" rx="8" ry="4.2" fill="url(#glossGrad)" />
+    </g>
+
+    <!-- Azeitona 3 (Direita) -->
+    <g transform="rotate(-14 306 93)">
+      <ellipse cx="306" cy="93" rx="25" ry="16.5" fill="url(#oliveGrad)" />
+      <ellipse cx="301" cy="89" rx="9.5" ry="4.8" fill="url(#glossGrad)" />
+    </g>
+  </g>
+</svg>

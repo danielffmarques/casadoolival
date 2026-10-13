@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservar Estadia — Casa do Olival [Nota de Transparência Bruto: Preços Exemplares]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logos/logo.svg" type="image/svg+xml">
+  <style>
+    .booking-page-layout {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 40px;
+      align-items: start;
+      margin: 48px auto 96px;
+    }
+    .booking-card-main {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .booking-step-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step-number-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      color: var(--color-primary-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+      background: #FFFFFF;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(117, 132, 27, 0.15);
+    }
+    .options-box {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .option-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .option-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--color-primary);
+      cursor: pointer;
+    }
+    .option-label {
+      display: flex;
+      flex-direction: column;
+    }
+    .option-name {
+      font-weight: 600;
+      font-size: 0.94rem;
+      color: var(--color-text-main);
+    }
+    .option-desc {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+    }
+    .sticky-summary {
+      position: sticky;
+      top: 104px;
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+    .summary-header {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 20px;
+    }
+    .summary-house-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+    }
+    .summary-house-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-primary-dark);
+      background: var(--color-primary-light);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-top: 6px;
+    }
+    .summary-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+    }
+    .summary-line strong {
+      color: var(--color-text-main);
+    }
+    .summary-divider {
+      height: 1px;
+      background: var(--color-border);
+      margin: 16px 0;
+    }
+    .summary-total-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+    }
+    .summary-total-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-text-main);
+    }
+    .summary-total-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-box {
+      background: #FFFFFF;
+      max-width: 500px;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      animation: modalFadeIn 0.3s ease-out;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (max-width: 900px) {
+      .booking-page-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .booking-card-main,
+      .sticky-summary {
+        min-width: 0;
+      }
+      .sticky-summary {
+        position: static;
+      }
+    }
+    @media (max-width: 640px) {
+      .booking-card-main {
+        padding: 24px 16px;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .payment-methods-grid {
+        grid-template-columns: 1fr;
+      }
+      .billing-grid-2,
+      .billing-grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link" aria-label="Voltar à página inicial">
+        <img src="assets/logos/logo.svg" alt="Logótipo Casa do Olival" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Casa do Olival</span>
+          <span class="brand-location">Figueiró dos Vinhos, Leiria</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação Secundária">
+        <a href="index.html" class="nav-link">Página Inicial</a>
+        <a href="index.html#alojamento" class="nav-link">Alojamento</a>
+        <a href="index.html#experiencias" class="nav-link">Experiências</a>
+        <a href="index.html#faqs" class="nav-link">FAQs</a>
+      </nav>
+
+      <a href="index.html#contactos" class="btn btn-secondary">Contactos Diretos</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Cabeçalho da Página com Transparência -->
+    <div style="margin-top: 40px; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+      <h1 class="section-title" style="margin-bottom: 12px;">Reservar Estadia — Casa do Olival</h1>
+      <div class="prototype-transparency-note" style="margin: 16px auto 0; max-width: 720px; text-align: left;">
+        <strong>Nota de Transparência Bruto:</strong>
+        <span>Os preços e disponibilidades apresentados são exemplares e refletem o preçário real do alojamento entre 75 € e 160 €/noite. A moradia é de aluguer exclusivo integral.</span>
+      </div>
+    </div>
+
+    <div class="booking-page-layout">
+      <!-- Formulário de Reserva -->
+      <div class="booking-card-main">
+        <form id="bookingForm">
+          <!-- Passo 1: Datas e Hóspedes -->
+          <div class="booking-step-title">
+            <span class="step-number-badge">1</span>
+            <span>Datas &amp; Ocupação da Moradia</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="resCheckin">Data de Check-in</label>
+              <input type="date" id="resCheckin" required>
+            </div>
+            <div class="form-group">
+              <label for="resCheckout">Data de Check-out</label>
+              <input type="date" id="resCheckout" required>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 32px;">
+            <label for="resGuests">Número de Hóspedes (Até 6 Pessoas)</label>
+            <select id="resGuests" required>
+              <option value="1">1 Hóspede (Moradia Completa)</option>
+              <option value="2" selected>2 Hóspedes (Moradia Completa)</option>
+              <option value="3">3 Hóspedes (Moradia Completa)</option>
+              <option value="4">4 Hóspedes (Moradia Completa)</option>
+              <option value="5">5 Hóspedes (Moradia Completa)</option>
+              <option value="6">6 Hóspedes (Capacidade Máxima)</option>
+            </select>
+            <small style="color: var(--color-text-muted); font-size: 0.78rem; margin-top: 4px;">
+              * Aluguer exclusivo: o grupo terá a moradia de 3 quartos e os 5.000 m² de olival para usufruto privado.
+            </small>
+          </div>
+
+          <!-- Passo 2: Opcionais e Serviços -->
+          <div class="booking-step-title">
+            <span class="step-number-badge">2</span>
+            <span>Serviços &amp; Experiências Opcionais</span>
+          </div>
+
+          <div class="options-box">
+            <label class="option-item">
+              <input type="checkbox" id="optFirewood">
+              <div class="option-label">
+                <span class="option-name">Cesto de Lenha para a Salamandra (+15 €)</span>
+                <span class="option-desc">Lenha de oliveira e acendalhas prontas para noites aconchegantes junto à lareira.</span>
+              </div>
+            </label>
+
+            <label class="option-item">
+              <input type="checkbox" id="optBasket">
+              <div class="option-label">
+                <span class="option-name">Cesto de Boas-Vindas com Produtos Locais (+25 €)</span>
+                <span class="option-desc">Azeite virgem extra da região, pão-de-ló tradicional de Figueiró e compota caseira.</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Passo 3: Dados de Contacto e Faturação -->
+          <div class="booking-step-title">
+            <span class="step-number-badge">3</span>
+            <span>Dados do Hóspede Titular &amp; Faturação</span>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="guestName">Nome Completo</label>
+              <input type="text" id="guestName" placeholder="Ex: Ana Silva" required>
+            </div>
+            <div class="form-group">
+              <label for="guestEmail">E-mail de Contacto</label>
+              <input type="email" id="guestEmail" placeholder="exemplo@dominio.pt" required>
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="guestPhone">Telemóvel / WhatsApp</label>
+              <input type="tel" id="guestPhone" placeholder="+351 912 345 678" required>
+            </div>
+            <div class="form-group">
+              <label for="guestCity">País / Cidade de Origem</label>
+              <input type="text" id="guestCity" placeholder="Ex: Lisboa, Portugal">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label for="guestNotes">Notas Especiais ou Perguntas (Opcional)</label>
+            <textarea id="guestNotes" rows="2" placeholder="Indique se necessita de berço para bebé ou a hora prevista de chegada."></textarea>
+          </div>
+
+          <!-- Secção de Faturação (NIF, Morada e Dados Fiscais) -->
+          <div class="billing-section" style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--color-border); margin-bottom: 28px;">
+            <label style="display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none;">
+              <span style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.92rem; color: var(--color-text-main);">
+                <input type="checkbox" id="toggleInvoiceFields" style="accent-color: var(--color-primary-dark); width: 18px; height: 18px; cursor: pointer;">
+                <span>Desejo fatura com contribuinte (NIF)</span>
+              </span>
+              <span style="font-size: 0.78rem; color: var(--color-text-muted); background: var(--color-bg-subtle); padding: 3px 8px; border-radius: 4px; border: 1px solid var(--color-border);">Opcional</span>
+            </label>
+
+            <!-- Bloco Expansível de Campos de Faturação -->
+            <div id="invoiceFieldsCollapse" style="display: none; margin-top: 14px; padding: 18px; background: var(--color-bg-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
+              <div class="billing-grid-2" style="margin-bottom: 14px;">
+                <div class="form-group">
+                  <label for="invoiceNif" style="font-weight: 600; font-size: 0.85rem; margin-bottom: 6px;">NIF / NIPC <span style="color: var(--color-primary-dark);">*</span></label>
+                  <input type="text" id="invoiceNif" placeholder="Ex: 123 456 789" maxlength="15">
+                </div>
+                <div class="form-group">
+                  <label for="invoiceName" style="font-weight: 600; font-size: 0.85rem; margin-bottom: 6px;">Nome Fiscal ou Empresa</label>
+                  <input type="text" id="invoiceName" placeholder="Nome a constar na fatura">
+                </div>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 14px;">
+                <label for="invoiceAddress" style="font-weight: 600; font-size: 0.85rem; margin-bottom: 6px;">Morada de Faturação <span style="color: var(--color-primary-dark);">*</span></label>
+                <input type="text" id="invoiceAddress" placeholder="Rua, número de porta e andar">
+              </div>
+
+              <div class="billing-grid-3">
+                <div class="form-group">
+                  <label for="invoicePostal" style="font-weight: 600; font-size: 0.85rem; margin-bottom: 6px;">Código Postal <span style="color: var(--color-primary-dark);">*</span></label>
+                  <input type="text" id="invoicePostal" placeholder="0000-000" maxlength="10">
+                </div>
+                <div class="form-group">
+                  <label for="invoiceCity" style="font-weight: 600; font-size: 0.85rem; margin-bottom: 6px;">Localidade / Cidade <span style="color: var(--color-primary-dark);">*</span></label>
+                  <input type="text" id="invoiceCity" placeholder="Ex: Figueiró dos Vinhos">
+                </div>
+                <div class="form-group">
+                  <label for="invoiceCountry" style="font-weight: 600; font-size: 0.85rem; margin-bottom: 6px;">País</label>
+                  <select id="invoiceCountry">
+                    <option value="Portugal" selected>Portugal</option>
+                    <option value="Espanha">Espanha</option>
+                    <option value="França">França</option>
+                    <option value="Reino Unido">Reino Unido</option>
+                    <option value="Alemanha">Alemanha</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+              </div>
+              <div style="font-size: 0.78rem; color: var(--color-text-muted); margin-top: 10px;">
+                A fatura-recibo oficial emitida pela Casa do Olival será enviada em formato digital para o correio eletrónico indicado.
+              </div>
+            </div>
+          </div>
+
+          <!-- Passo 4: Pagamento Seguro no Momento -->
+          <div class="booking-step-title">
+            <span class="step-number-badge">4</span>
+            <span>Pagamento Seguro no Momento</span>
+          </div>
+
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 16px;">
+            Confirmação imediata da sua estadia na moradia. Selecione o método de pagamento preferencial para concluir a reserva:
+          </p>
+
+          <!-- Seletor de Métodos de Pagamento -->
+          <div class="payment-methods-grid">
+            <label class="payment-method-card selected" data-method="card">
+              <input type="radio" name="paymentMethod" value="Cartão de Crédito/Débito" checked>
+              <div class="payment-method-header">
+                <span class="payment-method-title">Cartão de Crédito / Débito</span>
+              </div>
+              <div class="payment-method-sub">Visa, Mastercard ou American Express</div>
+            </label>
+
+            <label class="payment-method-card" data-method="mbway">
+              <input type="radio" name="paymentMethod" value="MB WAY">
+              <div class="payment-method-header">
+                <span class="payment-method-title">MB WAY</span>
+              </div>
+              <div class="payment-method-sub">Notificação instantânea no seu telemóvel</div>
+            </label>
+
+            <label class="payment-method-card" data-method="multibanco">
+              <input type="radio" name="paymentMethod" value="Referência Multibanco">
+              <div class="payment-method-header">
+                <span class="payment-method-title">Referência Multibanco</span>
+              </div>
+              <div class="payment-method-sub">Entidade, referência e montante gerados na hora</div>
+            </label>
+          </div>
+
+          <!-- Campos Dinâmicos do Método de Pagamento -->
+          <div id="paymentFieldsCard" class="payment-fields-box">
+            <div class="form-group" style="margin-bottom: 14px;">
+              <label for="cardNum" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 6px;">Número do Cartão</label>
+              <input type="text" id="cardNum" placeholder="4532 •••• •••• 8920" autocomplete="off" maxlength="19">
+            </div>
+            <div class="form-grid-2" style="margin-bottom: 0;">
+              <div class="form-group">
+                <label for="cardExp" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 6px;">Validade</label>
+                <input type="text" id="cardExp" placeholder="MM/AA" autocomplete="off" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label for="cardCvc" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 6px;">CVC / CVV</label>
+                <input type="password" id="cardCvc" placeholder="123" autocomplete="off" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <div id="paymentFieldsMbway" class="payment-fields-box" style="display: none;">
+            <div class="form-group">
+              <label for="mbwayPhone" style="font-weight: 600; font-size: 0.88rem; margin-bottom: 6px;">Número de Telemóvel MB WAY</label>
+              <input type="tel" id="mbwayPhone" placeholder="+351 912 345 678" maxlength="16">
+              <small style="color: var(--color-text-muted); font-size: 0.78rem; margin-top: 6px; display: block;">
+                Receberá uma notificação na sua aplicação MB WAY para validar o pagamento em 5 minutos.
+              </small>
+            </div>
+          </div>
+
+          <div id="paymentFieldsMultibanco" class="payment-fields-box" style="display: none;">
+            <div style="font-size: 0.88rem; color: var(--color-text-main); line-height: 1.5;">
+              <strong>Dados da Referência Multibanco:</strong>
+              <div style="margin-top: 8px; font-family: monospace; font-size: 0.95rem; background: #fff; padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); line-height: 1.6;">
+                <div>Entidade: <strong>21245</strong></div>
+                <div>Referência: <strong>982 410 873</strong></div>
+                <div>Validade: <strong>24 horas</strong></div>
+              </div>
+              <small style="color: var(--color-text-muted); font-size: 0.78rem; margin-top: 6px; display: block;">
+                A referência demonstrativa ficará ativa imediatamente após a confirmação.
+              </small>
+            </div>
+          </div>
+
+          <div class="payment-security-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Pagamento Seguro com Encriptação SSL de 256 bits</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="btnSubmitBooking" style="width: 100%; padding: 15px; font-size: 1.05rem;">
+            Confirmar Reserva e Pagar Agora (<span id="btnPayAmount">205 €</span>)
+          </button>
+        </form>
+      </div>
+
+      <!-- Resumo Lateral Sticky -->
+      <aside class="sticky-summary" id="bookingSummaryCard" aria-label="Resumo da Reserva">
+        <div class="summary-header">
+          <div class="summary-house-title">Casa do Olival</div>
+          <span class="summary-house-badge">Uso Exclusivo Integral</span>
+        </div>
+
+        <div class="summary-lines">
+          <div class="summary-line">
+            <span>Duração da Estadia:</span>
+            <strong id="summaryNights">2 noites</strong>
+          </div>
+          <div class="summary-line">
+            <span>Ocupantes:</span>
+            <strong id="summaryGuests">2 hóspedes</strong>
+          </div>
+          <div class="summary-line">
+            <span>Valor Base da Moradia:</span>
+            <strong id="summaryBaseTotal">170 €</strong>
+          </div>
+          <div class="summary-line">
+            <span>Taxa de Limpeza &amp; Preparação:</span>
+            <strong id="summaryCleaning">35 €</strong>
+          </div>
+          <div class="summary-line">
+            <span>Serviços Opcionais:</span>
+            <strong id="summaryExtras">0 €</strong>
+          </div>
+          <div class="summary-line">
+            <span>Método de Pagamento:</span>
+            <strong id="summaryPaymentMethod">Cartão</strong>
+          </div>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-total-line">
+          <span class="summary-total-label">Preço Total:</span>
+          <span class="summary-total-value" id="summaryGrandTotal">205 €</span>
+        </div>
+
+        <div style="background: var(--color-bg-subtle); padding: 12px; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.45;">
+          <strong>Pagamento Imediato Garantido:</strong> Reserva registada e confirmada instantaneamente. Sem taxas ocultas de intermediação.
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Modal de Confirmação Demonstrativa -->
+  <div class="modal-overlay" id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box" style="max-width: 540px; text-align: left;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+        <span style="display: inline-block; background-color: #dcfce7; color: #166534; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; border: 1px solid #bbf7d0;">
+          Pagamento Confirmado no Momento
+        </span>
+        <button type="button" id="closeModalCrossBtn" aria-label="Fechar Janela" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-muted);">&times;</button>
+      </div>
+
+      <h3 id="modalTitle" style="font-size: 1.35rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text-main);">
+        Reserva e Pagamento Concluídos com Sucesso
+      </h3>
+
+      <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.55; margin-bottom: 18px;">
+        O seu pagamento foi processado com sucesso e a estadia na <strong>Casa do Olival</strong> está garantida. Enviámos o comprovativo e os detalhes para o seu correio eletrónico.
+      </p>
+
+      <div style="background-color: var(--color-bg-subtle); border-radius: var(--radius-sm); padding: 16px; margin-bottom: 20px; font-size: 0.88rem; line-height: 1.65; border-left: 3px solid var(--color-primary-dark);">
+        <div><strong>Alojamento:</strong> Casa do Olival (Moradia Exclusiva)</div>
+        <div><strong>Datas:</strong> <span id="modalResDates">—</span> (<span id="modalResNights">—</span>)</div>
+        <div><strong>Hóspede:</strong> <span id="modalResName">—</span> • <span id="modalResGuests">2 Hóspedes</span></div>
+        <div><strong>Preço Total:</strong> <span id="modalResTotal" style="font-weight: 700; color: var(--color-primary-dark);">— €</span></div>
+        <div><strong>Contacto:</strong> <span id="modalResContact">—</span></div>
+        <div><strong>Método de Pagamento:</strong> <span id="modalResPayment">Cartão de Crédito / Débito</span></div>
+        <div id="modalResBillingRow" style="display: none;"><strong>Faturação:</strong> <span id="modalResBilling">—</span></div>
+        <div><strong>Estado:</strong> <span style="color: #27ae60; font-weight: 700;">Confirmado e Pago</span></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a id="modalWhatsAppLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="text-align: center; padding: 11px; font-weight: 600;">
+          Enviar Comprovativo por WhatsApp à Dona Maria João
+        </a>
+        <button type="button" class="btn btn-primary" id="closeModalBtn" style="padding: 11px; width: 100%;">
+          Concluir e Voltar à Página Inicial
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" style="padding-top: 40px;">
+    <div class="container footer-bottom" style="border-top: none;">
+      <div>
+        &copy; 2026 Casa do Olival — Figueiró dos Vinhos. Registo 39917/AL.
+      </div>
+      <div class="footer-legal-links">
+        <a href="#privacidade" class="legal-modal-trigger" data-legal="privacy">Política de Privacidade</a>
+        <span class="sep" aria-hidden="true">•</span>
+        <a href="#termos" class="legal-modal-trigger" data-legal="terms">Termos e Condições</a>
+        <span class="sep" aria-hidden="true">•</span>
+        <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer">Livro de Reclamações</a>
+      </div>
+      <div>
+        Standard de Qualidade Bruto
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/reservas.js"></script>
+</body>
+</html>

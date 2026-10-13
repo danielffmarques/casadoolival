@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa do Olival — Alojamento Local em Figueiró dos Vinhos | Site Oficial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/logos/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Header & Navegação -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link" aria-label="Casa do Olival — Início">
+        <img src="assets/logos/logo.svg" alt="Logótipo Casa do Olival" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Casa do Olival</span>
+          <span class="brand-location">Figueiró dos Vinhos, Leiria</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação Principal">
+        <a href="#alojamento" class="nav-link">Alojamento</a>
+        <a href="#historia" class="nav-link">História</a>
+        <a href="#experiencias" class="nav-link">Experiências</a>
+        <a href="#opinioes" class="nav-link">Opiniões</a>
+        <a href="#faqs" class="nav-link">FAQs</a>
+      </nav>
+
+      <a href="reservas.html" class="btn btn-primary" id="headerCtaBtn">Reservar Estadia</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Destaque Principal">
+      <div class="container hero-content">
+        <h1 class="hero-title">O Seu Refúgio de Campo no Centro de Portugal</h1>
+        <p class="hero-subtitle">
+          A nossa casa de família entre oliveiras e árvores de fruto, a passos da vila histórica e a escassos minutos de carro das águas cristalinas das Fragas de São Simão.
+        </p>
+
+        <!-- Barra de Reserva Rápida Compacta -->
+        <form class="booking-bar-wrapper" id="quickBookingForm">
+          <div class="booking-field">
+            <label for="quickCheckin">Check-in</label>
+            <input type="date" id="quickCheckin" required>
+          </div>
+          <div class="booking-field">
+            <label for="quickCheckout">Check-out</label>
+            <input type="date" id="quickCheckout" required>
+          </div>
+          <div class="booking-field">
+            <label for="quickGuests">Hóspedes (Moradia Inteira)</label>
+            <select id="quickGuests">
+              <option value="1">1 Hóspede</option>
+              <option value="2" selected>2 Hóspedes</option>
+              <option value="3">3 Hóspedes</option>
+              <option value="4">4 Hóspedes</option>
+              <option value="5">5 Hóspedes</option>
+              <option value="6">6 Hóspedes (Capacidade Máxima)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Ver Disponibilidade</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Secção Alojamento: Moradia & História da Anfitriã Integradas -->
+    <section class="section" id="alojamento">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Uma Casa Privada para o Seu Grupo</h2>
+          <p class="section-desc">
+            A Casa do Olival é reservada exclusivamente para um grupo de cada vez, garantindo total privacidade em 80 m² interiores e 5.000 m² de olival e árvores de fruto.
+          </p>
+        </div>
+
+        <div class="house-grid">
+          <!-- Carrossel da Casa com Setas de Navegação -->
+          <div class="carousel-container" id="houseCarousel">
+            <button type="button" class="carousel-arrow carousel-arrow-prev" id="carouselPrevBtn" aria-label="Imagem anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="carousel-arrow carousel-arrow-next" id="carouselNextBtn" aria-label="Imagem seguinte">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            <div class="carousel-slide active">
+              <img src="assets/images/casa_exterior_olival.jpg" alt="Fachada exterior da Casa do Olival em Figueiró dos Vinhos" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/patio_solario.jpg" alt="Pátio e solário exterior para descanso" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/alpendre_refeicoes.jpg" alt="Alpendre com mesa para refeições ao ar livre e churrasqueira" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/sala_estar_salamandra.jpg" alt="Sala de estar acolhedora com salamandra para aquecimento" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/sala_jantar_bookcrossing.jpg" alt="Sala de refeições com espaço de BookCrossing para troca de livros" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/cozinha_equipada.jpg" alt="Cozinha totalmente equipada com eletrodomésticos essenciais" loading="lazy">
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/images/olival_laranjeiras.jpg" alt="Olival e pomar onde os hóspedes podem colher fruta da época" loading="lazy">
+            </div>
+
+            <div class="carousel-dots" role="tablist" aria-label="Fotografias da moradia">
+              <button type="button" class="carousel-dot active" data-index="0" aria-label="Fotografia 1" role="tab" aria-selected="true"></button>
+              <button type="button" class="carousel-dot" data-index="1" aria-label="Fotografia 2" role="tab" aria-selected="false"></button>
+              <button type="button" class="carousel-dot" data-index="2" aria-label="Fotografia 3" role="tab" aria-selected="false"></button>
+              <button type="button" class="carousel-dot" data-index="3" aria-label="Fotografia 4" role="tab" aria-selected="false"></button>
+              <button type="button" class="carousel-dot" data-index="4" aria-label="Fotografia 5" role="tab" aria-selected="false"></button>
+              <button type="button" class="carousel-dot" data-index="5" aria-label="Fotografia 6" role="tab" aria-selected="false"></button>
+              <button type="button" class="carousel-dot" data-index="6" aria-label="Fotografia 7" role="tab" aria-selected="false"></button>
+            </div>
+          </div>
+
+          <!-- Informações e Bullet-points -->
+          <div class="house-details">
+            <div class="feature-list">
+              <div class="feature-item">
+                <svg class="feature-icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <div>
+                  <strong>Aluguer Integral e Exclusivo:</strong> Moradia de dois pisos para uso exclusivo do seu grupo familiar ou de amigos (capacidade até 6 hóspedes em 3 quartos).
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <svg class="feature-icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <div>
+                  <strong>Olival Privado de 5.000 m²:</strong> Terreno amplo com laranjeiras e oliveiras onde pode colher laranjas frescas para o pequeno-almoço.
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <svg class="feature-icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                <div>
+                  <strong>Piso 0 Funcional:</strong> Cozinha completa (fogão, micro-ondas, máquina de lavar loiça, cafeteira), sala de estar com salamandra a lenha, WC social e espaço de BookCrossing.
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <svg class="feature-icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <div>
+                  <strong>Alpendre &amp; Solário:</strong> Zona exterior para refeições ao ar livre, barbecue/grelhador, mesas de apoio, espreguiçadeiras e guarda-sol.
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <svg class="feature-icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <div>
+                  <strong>Conforto Familiar:</strong> Wi-Fi gratuito de alta velocidade, jogos de tabuleiro, berço e cadeira de refeição para bebés disponíveis.
+                </div>
+              </div>
+            </div>
+
+            <div class="prototype-transparency-note">
+              <strong>Nota de Transparência Bruto:</strong>
+              <span>As imagens apresentadas refletem a estrutura real da moradia e os dados correspondem integralmente ao registo oficial do alojamento.</span>
+            </div>
+
+            <div style="margin-top: 20px;">
+              <a href="reservas.html" class="btn btn-primary">Reservar Casa Completa</a>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secção Exclusiva: A nossa história -->
+    <section class="section section-story" id="historia">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">A nossa história</h2>
+        </div>
+
+        <div class="story-compare-container">
+          <div class="story-compare-body">
+            <!-- Widget Interativo de Comparação Antes / Depois -->
+            <div class="image-compare-widget" id="compareWidget">
+              <img class="compare-image compare-after" src="assets/images/casa_depois_novo.jpg" alt="Casa do Olival recuperada e renovada" loading="lazy">
+              <div class="compare-image-wrap" id="compareOverlay">
+                <img class="compare-image compare-before" src="assets/images/casa_antes_velho.jpg" alt="Casa antes da recuperação em 2015" loading="lazy">
+              </div>
+              <div class="compare-handle" id="compareHandle"></div>
+              <span class="compare-label compare-label-before">Antes (2015)</span>
+              <span class="compare-label compare-label-after">Depois (Hoje)</span>
+              <input type="range" min="0" max="100" value="50" class="compare-slider-input" id="compareSlider" aria-label="Deslizar comparação Antes e Depois" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            </div>
+
+            <!-- Depoimento Pessoal da Anfitriã -->
+            <div class="story-content-card">
+              <div class="story-host-header">
+                <img src="assets/images/anfitria_maria_joao.jpg" alt="Maria João, Anfitriã da Casa do Olival" class="story-host-avatar" loading="lazy">
+                <div>
+                  <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 2px;">Maria João</h4>
+                  <span style="font-size: 0.85rem; color: var(--color-primary-dark); font-weight: 600;">Proprietária e Anfitriã</span>
+                </div>
+              </div>
+
+              <blockquote class="story-quote">
+                "A Casa do Olival nasceu com muito empenho e um grande carinho por Figueiró dos Vinhos. Trata-se de uma habitação que os meus pais me deixaram e que, em 2015, se encontrava em avançado estado de degradação. A necessidade de recuperação era evidente e deitámos mãos à obra em família!
+                <br><br>
+                O nosso núcleo familiar encontra-se espalhado por três cantos do mundo e a Casa do Olival é o ninho que construímos para nos aproximar. Espero que sejam muitos a criar memórias tão boas como as que nós temos desta terra."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secção Experiências & Sugestões da Região (Acolhedor, Pessoal e Confortável) -->
+    <section class="section section-subtle" id="experiencias">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">O que descobrir nos Arredores</h2>
+          <p class="section-desc">
+            As recomendações que partilhamos com quem nos visita, organizadas por proximidade: o centro histórico a minutos a pé, as deslumbrantes Fragas de São Simão e as aldeias e albufeiras da região.
+          </p>
+        </div>
+
+        <div class="transparency-note-bar">
+          <strong>Nota de Transparência Bruto:</strong>
+          <span>Os locais apresentados são exemplos demonstrativos (havendo espaço para mais sugestões da região), que devem ser selecionados e validados pela anfitriã.</span>
+        </div>
+
+        <!-- Filtros Interativos por Localidade e Proximidade -->
+        <div class="activities-tabs-wrapper">
+          <div class="activities-tabs-nav" role="tablist" aria-label="Sugestões por localidade">
+            <button type="button" class="activity-tab-btn active" id="tab-todos" data-category="todos" role="tab" aria-selected="true" aria-controls="activitiesGrid">
+              <svg class="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+              <span>Todas as Sugestões</span>
+            </button>
+            <button type="button" class="activity-tab-btn" id="tab-figueiro" data-category="figueiro" role="tab" aria-selected="false" aria-controls="activitiesGrid">
+              <svg class="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Figueiró dos Vinhos</span>
+            </button>
+            <button type="button" class="activity-tab-btn" id="tab-saosimao" data-category="saosimao" role="tab" aria-selected="false" aria-controls="activitiesGrid">
+              <svg class="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 3l4 8 5-5 5 15H2L8 3z"></path>
+              </svg>
+              <span>Casal e Fragas de São Simão</span>
+            </button>
+            <button type="button" class="activity-tab-btn" id="tab-arredores" data-category="arredores" role="tab" aria-selected="false" aria-controls="activitiesGrid">
+              <svg class="tab-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Aldeias do Xisto e Arredores</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="activities-grid" id="activitiesGrid" role="region" aria-label="Sugestões e atividades na região">
+          <!-- Card 1: Figueiró dos Vinhos -->
+          <article class="activity-card" data-category="figueiro">
+            <div class="activity-card-media">
+              <img src="assets/images/figueiro_centro_historico.jpg" alt="Centro Histórico de Figueiró dos Vinhos" loading="lazy">
+            </div>
+            <div class="activity-card-body">
+              <div class="activity-header">
+                <h3 class="activity-title">Centro Histórico e Casulo</h3>
+                <span class="activity-distance">~700 m • 8 min a pé</span>
+              </div>
+              <p class="activity-desc">
+                Passeio a pé desde o olival até ao Casulo do pintor José Malhoa, Centro de Artes, Torre Histórica e feira de frescos ao sábado de manhã.
+              </p>
+              <div class="activity-tip">
+                <strong>A D. Maria João diz:</strong> Não deixe de provar as castanhas doces e os 'queques de Figueiró' na pastelaria central.
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Figueiró dos Vinhos -->
+          <article class="activity-card" data-category="figueiro">
+            <div class="activity-card-media">
+              <img src="assets/images/praia_fluvial_ana_avis.jpg" alt="Praia Fluvial da Aldeia de Ana de Avis" loading="lazy">
+            </div>
+            <div class="activity-card-body">
+              <div class="activity-header">
+                <h3 class="activity-title">Praia de Ana de Avis</h3>
+                <span class="activity-distance">~3.5 km • 5 min de carro</span>
+              </div>
+              <p class="activity-desc">
+                Espaço muito agradável de águas calmas com relvado sombreado, parque de merendas sob arvoredo e zona infantil com acesso fácil.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 3: Casal e Fragas de São Simão -->
+          <article class="activity-card" data-category="saosimao">
+            <div class="activity-card-media">
+              <img src="assets/images/fragas_sao_simao.jpg" alt="Praia Fluvial das Fragas de São Simão" loading="lazy">
+            </div>
+            <div class="activity-card-body">
+              <div class="activity-header">
+                <h3 class="activity-title">Fragas de São Simão</h3>
+                <span class="activity-distance">~7 km • 8 min de carro</span>
+              </div>
+              <p class="activity-desc">
+                Garganta rochosa impressionante de águas cristalinas na Ribeira de Alge. Perfeita para mergulhos refrescantes em família nos dias quentes de verão.
+              </p>
+              <div class="activity-tip">
+                <strong>A D. Maria João diz:</strong> Vá pela manhã para usufruir da serenidade antes da praia ficar mais concorrida.
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Casal e Fragas de São Simão -->
+          <article class="activity-card" data-category="saosimao">
+            <div class="activity-card-media">
+              <img src="assets/images/passadicos_sao_simao.jpg" alt="Passadiços das Fragas de São Simão" loading="lazy">
+            </div>
+            <div class="activity-card-body">
+              <div class="activity-header">
+                <h3 class="activity-title">Passadiços de São Simão</h3>
+                <span class="activity-distance">~7 km • 8 min de carro</span>
+              </div>
+              <p class="activity-desc">
+                Percurso pedestre em madeira que liga o miradouro com vistas de cortar a respiração, a praia fluvial e a aldeia histórica do Casal de São Simão.
+              </p>
+            </div>
+          </article>
+
+          <!-- Card 5: Casal e Fragas de São Simão -->
+          <article class="activity-card" data-category="saosimao">
+            <div class="activity-card-media">
+              <img src="assets/images/aldeia_xisto_casal.jpg" alt="Aldeia do Xisto de Casal de São Simão" loading="lazy">
+            </div>
+            <div class="activity-card-body">
+              <div class="activity-header">
+                <h3 class="activity-title">Casal de São Simão</h3>
+                <span class="activity-distance">~7 km • 8 min de carro</span>
+              </div>
+              <p class="activity-desc">
+                Uma das mais acolhedoras Aldeias do Xisto de Portugal, com ruelas empedradas, fontes de água pura e o célebre restaurante típico "Varanda do Casal".
+              </p>
+              <div class="activity-tip">
+                <strong>A D. Maria João diz:</strong> Reserve mesa com antecedência se quiser provar a afamada gastronomia regional de forno a lenha.
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Aldeias do Xisto e Arredores -->
+          <article class="activity-card" data-category="arredores">
+            <div class="activity-card-media">
+              <img src="assets/images/albufeira_castelo_bode.jpg" alt="Albufeira de Castelo do Bode e Foz de Alge" loading="lazy">
+            </div>
+            <div class="activity-card-body">
+              <div class="activity-header">
+                <h3 class="activity-title">Albufeira de Castelo do Bode</h3>
+                <span class="activity-distance">~8 km • 10 min de carro</span>
+              </div>
+              <p class="activity-desc">
+                Encontro da ribeira de Alge com as águas calmas do Zêzere na Foz de Alge. Ponto idílico para passeios de barco, canoagem ou pesca desportiva.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         NOVA SECÇÃO: OPINIÕES DOS HÓSPEDES (Idêntica ao projeto anterior com cores da Casa do Olival)
+         ======================================================================= -->
+    <section id="opinioes" class="section section-opinioes">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">O Que Dizem os Nossos Hóspedes</h2>
+          <p class="section-desc">
+            Comentários reais e carinhosos de famílias e amigos recebidos na Casa do Olival através do Booking.com e Airbnb.
+          </p>
+        </div>
+
+        <div class="transparency-note-bar">
+          <strong>Nota de Transparência Bruto:</strong>
+          <span>Avaliações recolhidas a partir dos canais oficiais de reserva (Booking 9.8/10 e Airbnb 4.9/5). A escolha das opiniões devem ser validadas pela anfitriã.</span>
+        </div>
+
+        <!-- Ticker de Avaliações em Loop Contínuo com Suporte de Arrastar e Navegação por Teclado -->
+        <div class="reviews-ticker-wrapper" id="reviewsTickerWrapper" role="region" aria-label="Avaliações dos hóspedes em rotação contínua" tabindex="0">
+          <div class="reviews-ticker-track" id="reviewsTickerTrack">
+            <!-- Review 1 -->
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-stars" aria-label="5 estrelas">
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="review-date">Booking.com • Setembro</span>
+              </div>
+              <p class="review-text">
+                "A simpatia e o carinho com que a dona Maria João nos recebeu é indescritível! À chegada tínhamos pão quentinho, queijo e compota caseira. A casa é espaçosa, muito confortável e o olival em volta transmite uma tranquilidade fantástica."
+              </p>
+              <div class="review-author">
+                <span class="review-name">Teresa &amp; Família</span>
+                <span class="review-origin">Lisboa • Estadia de 4 noites</span>
+              </div>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-stars" aria-label="5 estrelas">
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="review-date">Airbnb • Agosto</span>
+              </div>
+              <p class="review-text">
+                "Espaço impecável de limpeza, muito acolhedor e com tudo o que é preciso na cozinha. O alpendre exterior e a churrasqueira foram onde passámos quase todas as noites. As crianças puderam brincar à vontade sem qualquer perigo."
+              </p>
+              <div class="review-author">
+                <span class="review-name">Gonçalo P.</span>
+                <span class="review-origin">Porto • Grupo de 5 pessoas</span>
+              </div>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-stars" aria-label="5 estrelas">
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="review-date">Booking.com • Julho</span>
+              </div>
+              <p class="review-text">
+                "Excelente localização para explorar as Fragas de São Simão e as aldeias de xisto, mas com a vantagem de poder ir a pé até à vila tomar café ou ir às compras. A salamandra e os livros para troca deram um toque de casa muito acolhedor."
+              </p>
+              <div class="review-author">
+                <span class="review-name">Cláudia M.</span>
+                <span class="review-origin">Coimbra • Fim de semana a dois</span>
+              </div>
+            </article>
+
+            <!-- Review 4 -->
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-stars" aria-label="5 estrelas">
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="review-date">Airbnb • Junho</span>
+              </div>
+              <p class="review-text">
+                "A recuperação da casa está cheia de bom gosto e detalhes da história da família. É mesmo uma casa vivida e cuidada com carinho. Sentimo-nos em casa logo nos primeiros cinco minutos. Vamos voltar no outono com certeza!"
+              </p>
+              <div class="review-author">
+                <span class="review-name">Manuel &amp; Rita</span>
+                <span class="review-origin">Sintra • Estadia de 3 noites</span>
+              </div>
+            </article>
+
+            <!-- Review 5 -->
+            <article class="review-card">
+              <div class="review-header">
+                <div class="review-stars" aria-label="5 estrelas">
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="review-date">Booking.com • Maio</span>
+              </div>
+              <p class="review-text">
+                "Uma paz impagável. Pudemos apanhar laranjas doces diretamente das árvores e saborear o azeite da quinta que a Maria João nos ofereceu. Conforto térmico excelente e anfitriã super disponível e atenciosa."
+              </p>
+              <div class="review-author">
+                <span class="review-name">Joana &amp; Pedro</span>
+                <span class="review-origin">Aveiro • Moradia exclusiva</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secção FAQs e Contacto Lado a Lado -->
+    <section class="section section-faqs" id="faqs">
+      <span id="faq" aria-hidden="true" style="position: absolute; top: -80px;"></span>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Perguntas Frequentes &amp; Dúvidas</h2>
+          <p class="section-desc">
+            Informações essenciais e transparentes sobre a estadia, serviços incluídos e apoio direto da anfitriã.
+          </p>
+        </div>
+
+        <div class="faq-two-cols">
+          <!-- Coluna Esquerda: Acordeão de Questões -->
+          <div class="faq-accordion-col">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-1" type="button" aria-expanded="false" aria-controls="faq-ans-1">
+                <span>A casa é reservada apenas para o meu grupo ou partilho espaços?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+                A moradia é de aluguer integral e exclusivo para um único grupo de cada vez. Não é possível reservar quartos isolados, garantindo que toda a casa (80 m²), o alpendre, o barbecue e os 5.000 m² de olival são apenas para si e para os seus acompanhantes com total privacidade.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-2" type="button" aria-expanded="false" aria-controls="faq-ans-2">
+                <span>Qual é a capacidade máxima e como estão distribuídos os quartos?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+                A capacidade máxima é de 6 pessoas adultas, distribuídas por 3 quartos no piso superior: dois quartos com cama de casal (Quarto Moçambique e Quarto Suécia) e um quarto com duas camas individuais (Quarto Portugal). Adicionalmente, disponibilizamos um berço de viagem e cadeira de refeição para crianças até 3 anos sem custos adicionais.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-3" type="button" aria-expanded="false" aria-controls="faq-ans-3">
+                <span>Quais são os horários de check-in e check-out e existe flexibilidade?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+                O check-in realiza-se habitualmente a partir das 16:00 e o check-out até às 11:00. Sempre que a ocupação do calendário o permitir, a anfitriã Maria João tem todo o gosto em acolher pedidos de horário flexível. O acolhimento é feito pessoalmente pela anfitriã, com apresentação dos detalhes da casa e mimos regionais de boas-vindas.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-4" type="button" aria-expanded="false" aria-controls="faq-ans-4">
+                <span>São permitidos animais de estimação (animais de companhia)?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+                Sim, são bem-vindos animais de estimação de pequeno e médio porte, mediante aviso prévio aquando da reserva. O olival vedado de 5.000 m² proporciona um espaço amplo e seguro para momentos ao ar livre, solicitando-se apenas os cuidados habituais com o mobiliário interior e a tranquilidade da propriedade.
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-5" type="button" aria-expanded="false" aria-controls="faq-ans-5">
+                <span>A roupa de cama, atoalhados e produtos de higiene estão incluídos?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+                Sim, todas as roupas de cama em algodão de qualidade, edredões confortáveis, toalhas de banho e de rosto para todos os hóspedes estão incluídas. A casa dispõe igualmente de secador de cabelo, sabonete artesanal e papel higiénico à chegada.
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-6" type="button" aria-expanded="false" aria-controls="faq-ans-6">
+                <span>A casa dispõe de Wi-Fi rápido e condições para teletrabalho ou estadia prolongada?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+                Sim, dispomos de ligação Wi-Fi estável e de alta velocidade por fibra ótica em toda a habitação. O silêncio do olival, a iluminação natural e as mesas de trabalho proporcionam um ambiente sereno e muito produtivo para quem necessita de combinar descanso com trabalho remoto.
+              </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-7" type="button" aria-expanded="false" aria-controls="faq-ans-7">
+                <span>Onde posso fazer compras para abastecer a casa durante a estadia?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+                A apenas 2 a 3 minutos de carro (ou cerca de 8 a 10 minutos a pé), encontra no centro de Figueiró dos Vinhos os supermercados Intermarché e Meu Super, padarias com pão quente diário, talhos e farmácia. Aos sábados de manhã realiza-se a feira municipal tradicional com produtores locais de fruta, legumes, mel e queijo da região.
+              </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-8" type="button" aria-expanded="false" aria-controls="faq-ans-8">
+                <span>Como funciona o aquecimento no outono e inverno?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
+                A sala de estar conta com uma salamandra a lenha tradicional de alto rendimento, que aquece confortavelmente as zonas sociais e o piso superior. Disponibilizamos lenha e instruções de utilização aos hóspedes para noites acolhedoras junto à lareira.
+              </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-9" type="button" aria-expanded="false" aria-controls="faq-ans-9">
+                <span>A cozinha está completamente equipada para confecionar refeições?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-9" role="region" aria-labelledby="faq-btn-9">
+                Sim. A cozinha dispõe de fogão, forno, micro-ondas, frigorífico, máquina de lavar loiça, máquina de café, cafeteira, torradeira, chaleira elétrica, trem de cozinha completo, louças e talheres para 6 pessoas, além de ferro e tábua de engomar.
+              </div>
+            </div>
+
+            <!-- FAQ 10 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-10" type="button" aria-expanded="false" aria-controls="faq-ans-10">
+                <span>Existe estacionamento privativo na propriedade?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-10" role="region" aria-labelledby="faq-btn-10">
+                Sim, a propriedade dispõe de estacionamento privativo e gratuito no interior da herdade com portão, oferecendo espaço amplo e seguro para mais do que uma viatura.
+              </div>
+            </div>
+
+            <!-- FAQ 11 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-11" type="button" aria-expanded="false" aria-controls="faq-ans-11">
+                <span>Qual é a política de cancelamento e quais as vantagens da reserva direta com a anfitriã?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-11" role="region" aria-labelledby="faq-btn-11">
+                Ao reservar diretamente connosco, beneficia da melhor tarifa disponível (sem as comissões de serviço cobradas por plataformas terceiras), atendimento direto com a dona Maria João e cancelamento flexível com reembolso integral até 7 dias antes da data de chegada.
+              </div>
+            </div>
+
+            <!-- FAQ 12 -->
+            <div class="faq-item">
+              <button class="faq-button" id="faq-btn-12" type="button" aria-expanded="false" aria-controls="faq-ans-12">
+                <span>A que distância fica o centro da vila e o comércio?</span>
+                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </button>
+              <div class="faq-content" id="faq-ans-12" role="region" aria-labelledby="faq-btn-12">
+                A Casa do Olival dista apenas 7 a 8 minutos a pé (menos de 800 metros) do centro histórico de Figueiró dos Vinhos, onde encontra pastelarias tradicionais com o célebre pão-de-ló, restaurantes regionais, farmácia, bancos e o mercado municipal aos sábados.
+              </div>
+            </div>
+          </div>
+
+          <!-- Coluna Direita: Formulário de Dúvidas ao lado das questões -->
+          <div class="contact-side-card">
+            <h3>Ficou com alguma dúvida?</h3>
+            <p>
+              Envie a sua mensagem diretamente à Dona Maria João antes de reservar.
+            </p>
+
+            <form id="contactForm" style="display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <input type="text" placeholder="O seu nome" required style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.9rem;">
+              </div>
+              <div>
+                <input type="email" placeholder="O seu e-mail" required style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.9rem;">
+              </div>
+              <div>
+                <textarea placeholder="Como podemos ajudar na sua estadia?" rows="4" required style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--radius-sm); font-size: 0.9rem; resize: vertical;"></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary" style="width: 100%;">Enviar Mensagem</button>
+              <div id="contactFeedback" style="display: none; text-align: center; color: var(--color-primary-dark); font-size: 0.88rem; font-weight: 600; margin-top: 6px;">
+                Mensagem enviada com sucesso! A anfitriã responderá em 24h.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer com Contactos & Mapa Embutido na Coluna de Localização -->
+  <footer class="site-footer" id="contactos">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Coluna 1: Alojamento & Contactos Oficiais por baixo com Logos das Redes Sociais -->
+        <div class="footer-col">
+          <h4 style="color: #FFFFFF; font-size: 1.15rem; margin-bottom: 8px;">Casa do Olival</h4>
+          <p style="margin-bottom: 12px; font-size: 0.88rem; color: rgba(255, 255, 255, 0.75);">
+            Moradia tradicional recuperada de alojamento local, envolvida pela calma e autenticidade do olival e do Pinhal Interior.
+          </p>
+          <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); margin-bottom: 18px;">
+            Registo Nacional de Turismo: <strong>39917/AL</strong><br>
+            Parceiro Oficial da Rede das Aldeias do Xisto
+          </p>
+
+          <!-- Contactos Directos por baixo da secção esquerda -->
+          <div class="footer-contacts-block">
+            <h5 class="footer-contacts-title">Contactos Directos</h5>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">Telemóvel:</span>
+              <a href="tel:+351964010229" class="footer-contact-val">(+351) 96 4010 229</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-label">E-mail:</span>
+              <a href="mailto:info@casadoolivalfv.pt" class="footer-contact-val">info@casadoolivalfv.pt</a>
+            </div>
+
+            <!-- Redes Sociais apenas com Logos SVG discretos -->
+            <div class="footer-social-icons" aria-label="Redes Sociais Oficiais">
+              <a href="https://instagram.com/casa_do_olival_fv" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram da Casa do Olival" title="Instagram @casa_do_olival_fv">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://facebook.com/casadoolivalfigueirodosvinhos" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook da Casa do Olival" title="Facebook /casadoolivalfigueirodosvinhos">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 2: As Secções tal e qual do Website na Vertical -->
+        <div class="footer-col">
+          <h4>Secções do Website</h4>
+          <ul class="footer-vertical-nav">
+            <li><a href="#alojamento" class="footer-nav-link">Alojamento</a></li>
+            <li><a href="#historia" class="footer-nav-link">História</a></li>
+            <li><a href="#experiencias" class="footer-nav-link">Experiências</a></li>
+            <li><a href="#opinioes" class="footer-nav-link">Opiniões</a></li>
+            <li><a href="#faqs" class="footer-nav-link">FAQs</a></li>
+            <li><a href="reservas.html" class="footer-nav-link footer-nav-highlight">Reservar Estadia</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Localização com Mapa Abaixo -->
+        <div class="footer-col">
+          <h4>Localização &amp; Acessos</h4>
+          <p style="margin-bottom: 10px;">
+            Figueiró dos Vinhos, Leiria — Portugal<br>
+            Coordenadas GPS: 39°54'02.00"N, 8°16'51.39"W
+          </p>
+          <p class="footer-distances-line">
+            Distâncias: Coimbra (45 km) • Tomar (50 km) • Lisboa (180 km) • Porto (160 km)
+          </p>
+
+          <!-- Mapa Oficial Embed por baixo da secção de Localização e Acessos -->
+          <div class="footer-map-under">
+            <iframe
+              title="Localização da Casa do Olival em Figueiró dos Vinhos"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=39.900556,-8.280942+(Casa%20do%20Olival)&t=&z=16&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Casa do Olival — Figueiró dos Vinhos. Todos os direitos reservados.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#privacidade" class="legal-modal-trigger" data-legal="privacy">Política de Privacidade</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a href="#termos" class="legal-modal-trigger" data-legal="terms">Termos e Condições</a>
+          <span class="sep" aria-hidden="true">•</span>
+          <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener noreferrer">Livro de Reclamações</a>
+        </div>
+        <div>
+          Desenvolvido segundo o Standard de Qualidade Bruto
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700" fill="none">
+  <defs>
+    <radialGradient id="sunWash2" cx="28%" cy="72%" r="52%">
+      <stop offset="0%" stop-color="#6E7C1B" stop-opacity="0.15"/>
+      <stop offset="55%" stop-color="#C2A649" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#6E7C1B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leafTop2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#454F10"/>
+      <stop offset="100%" stop-color="#6E7C1B"/>
+    </linearGradient>
+    <linearGradient id="leafSilver2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6E7B48"/>
+      <stop offset="100%" stop-color="#9AA874"/>
+    </linearGradient>
+    <linearGradient id="oliveRipe2" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#3D3024"/>
+      <stop offset="48%" stop-color="#1E1812"/>
+      <stop offset="100%" stop-color="#0B0906"/>
+    </linearGradient>
+    <linearGradient id="oliveDeep2" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#322820"/>
+      <stop offset="52%" stop-color="#17130E"/>
+      <stop offset="100%" stop-color="#080705"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Halo botânico suave -->
+  <circle cx="195" cy="505" r="225" fill="url(#sunWash2)"/>
+
+  <!-- Ramos e Folhagem (opacidade calibrada para suavidade de fundo) -->
+  <g opacity="0.56">
+    <!-- Ramo Principal Ascendente da Esquerda Inferior -->
+    <path d="M -10 665 C 95 620, 195 555, 295 455 C 385 365, 485 275, 620 205" stroke="#3F4711" stroke-width="6.5" stroke-linecap="round"/>
+    <path d="M -10 662 C 93 617, 193 552, 293 452 C 383 362, 482 272, 612 203" stroke="#6E7C1B" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- Ramificações Secundárias -->
+    <path d="M 115 605 C 205 615, 295 598, 395 555 C 460 525, 525 482, 580 435" stroke="#485214" stroke-width="4.2" stroke-linecap="round"/>
+    <path d="M 225 520 C 245 430, 285 335, 350 230 C 395 160, 455 95, 525 42" stroke="#485214" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 365 390 C 445 385, 520 355, 598 310" stroke="#525D16" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 275 380 C 215 340, 155 280, 95 200" stroke="#525D16" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Folhas Prateadas -->
+    <g opacity="0.85">
+      <path d="M 155 612 Q 185 658 242 648 Q 202 605 155 612 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 255 595 Q 292 638 350 628 Q 305 588 255 595 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 355 568 Q 402 605 460 585 Q 408 552 355 568 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 465 515 Q 512 545 568 522 Q 518 492 465 515 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 190 545 Q 152 505 168 448 Q 212 492 190 545 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 275 470 Q 328 505 382 482 Q 328 450 275 470 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 375 382 Q 425 425 482 408 Q 428 365 375 382 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 465 308 Q 518 345 575 322 Q 518 288 465 308 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 275 395 Q 222 410 175 372 Q 230 360 275 395 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 320 290 Q 370 300 415 260 Q 360 252 320 290 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 385 185 Q 435 190 478 148 Q 425 142 385 185 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+      <path d="M 215 330 Q 165 350 122 312 Q 175 298 215 330 Z" fill="url(#leafSilver2)" stroke="#454F10" stroke-width="1.2"/>
+    </g>
+
+    <!-- Folhas Principais Verde-Oliva com Nervura Dourada -->
+    <g>
+      <path d="M 75 630 Q 115 670 172 658 Q 128 618 75 630 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 75 630 Q 122 642 162 654" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 105 602 Q 92 548 132 505 Q 145 562 105 602 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 105 602 Q 120 555 130 515" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 195 598 Q 222 552 278 542 Q 245 592 195 598 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 195 598 Q 238 570 268 548" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 295 582 Q 322 535 378 525 Q 342 575 295 582 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 295 582 Q 338 554 368 532" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 395 552 Q 422 502 478 492 Q 442 542 395 552 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 395 552 Q 438 522 468 500" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 500 495 Q 545 522 598 498 Q 548 468 500 495 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 500 495 Q 548 496 588 498" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 535 470 Q 555 422 608 408 Q 578 458 535 470 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 535 470 Q 572 438 598 415" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 235 512 Q 280 552 335 535 Q 288 495 235 512 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 235 512 Q 285 524 325 533" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 315 440 Q 298 385 335 338 Q 352 398 315 440 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 315 440 Q 325 390 333 348" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 405 362 Q 392 308 432 262 Q 445 322 405 362 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 405 362 Q 418 312 429 272" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 445 388 Q 492 422 548 402 Q 498 368 445 388 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 445 388 Q 495 395 538 401" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 520 362 Q 542 312 598 298 Q 565 350 520 362 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 520 362 Q 558 330 588 305" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 525 282 Q 512 228 552 182 Q 565 242 525 282 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 525 282 Q 538 232 549 192" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 575 255 Q 622 285 675 262 Q 625 232 575 255 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 575 255 Q 625 259 665 262" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 278 355 Q 252 308 282 258 Q 308 310 278 355 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 278 355 Q 280 308 282 268" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 342 245 Q 315 195 348 145 Q 372 198 342 245 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 342 245 Q 345 195 348 155" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 425 138 Q 402 88 438 38 Q 458 92 425 138 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 425 138 Q 432 88 437 48" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 475 92 Q 525 108 572 78 Q 520 62 475 92 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 475 92 Q 522 85 562 79" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 185 295 Q 168 242 205 198 Q 222 252 185 295 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 185 295 Q 195 248 203 208" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+
+      <path d="M 135 242 Q 85 255 45 218 Q 98 205 135 242 Z" fill="url(#leafTop2)" stroke="#333A0B" stroke-width="1.4"/>
+      <path d="M 135 242 Q 90 230 55 220" stroke="#C2A649" stroke-width="1.1" stroke-linecap="round" opacity="0.85"/>
+    </g>
+  </g>
+
+  <!-- Azeitonas Maduras Escuras (Galega) em destaque rico -->
+  <g opacity="0.96">
+    <path d="M 225 520 Q 222 495 212 482" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-18 208 468)">
+      <ellipse cx="208" cy="468" rx="15" ry="21.5" fill="url(#oliveRipe2)" stroke="#0B0906" stroke-width="1.2"/>
+      <ellipse cx="203" cy="461" rx="4.6" ry="8.2" fill="#8C7A5B" opacity="0.52"/>
+      <circle cx="202" cy="459" r="2" fill="#FFFFFF" opacity="0.72"/>
+    </g>
+    <path d="M 225 520 Q 240 498 248 485" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(22 254 472)">
+      <ellipse cx="254" cy="472" rx="14" ry="20" fill="url(#oliveDeep2)" stroke="#080705" stroke-width="1.2"/>
+      <ellipse cx="250" cy="465" rx="4.2" ry="7.4" fill="#7D6B50" opacity="0.5"/>
+      <circle cx="249" cy="463" r="1.8" fill="#FFFFFF" opacity="0.68"/>
+    </g>
+
+    <path d="M 155 602 Q 160 578 152 564" stroke="#3A420E" stroke-width="1.9" stroke-linecap="round"/>
+    <g transform="rotate(14 148 550)">
+      <ellipse cx="148" cy="550" rx="14" ry="19.5" fill="url(#oliveRipe2)" stroke="#0B0906" stroke-width="1.2"/>
+      <ellipse cx="143" cy="544" rx="4.2" ry="7.2" fill="#8C7A5B" opacity="0.5"/>
+      <circle cx="142" cy="542" r="1.7" fill="#FFFFFF" opacity="0.68"/>
+    </g>
+
+    <path d="M 338 575 Q 335 550 325 538" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-25 320 524)">
+      <ellipse cx="320" cy="524" rx="14.5" ry="20.5" fill="url(#oliveDeep2)" stroke="#080705" stroke-width="1.2"/>
+      <ellipse cx="315" cy="517" rx="4.4" ry="7.8" fill="#8C7A5B" opacity="0.52"/>
+      <circle cx="314" cy="515" r="1.8" fill="#FFFFFF" opacity="0.72"/>
+    </g>
+
+    <path d="M 375 395 Q 378 368 368 355" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-15 364 340)">
+      <ellipse cx="364" cy="340" rx="15.5" ry="22" fill="url(#oliveDeep2)" stroke="#080705" stroke-width="1.2"/>
+      <ellipse cx="359" cy="333" rx="4.6" ry="8.2" fill="#8C7A5B" opacity="0.52"/>
+      <circle cx="358" cy="331" r="2" fill="#FFFFFF" opacity="0.72"/>
+    </g>
+    <path d="M 375 395 Q 395 375 402 362" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(18 408 348)">
+      <ellipse cx="408" cy="348" rx="13.5" ry="19.5" fill="url(#oliveRipe2)" stroke="#0B0906" stroke-width="1.2"/>
+      <ellipse cx="404" cy="341" rx="4" ry="7" fill="#8C7A5B" opacity="0.5"/>
+      <circle cx="403" cy="339" r="1.7" fill="#FFFFFF" opacity="0.68"/>
+    </g>
+
+    <path d="M 485 305 Q 488 280 480 268" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-20 476 254)">
+      <ellipse cx="476" cy="254" rx="14.5" ry="20.5" fill="url(#oliveRipe2)" stroke="#0B0906" stroke-width="1.2"/>
+      <ellipse cx="471" cy="247" rx="4.4" ry="7.8" fill="#8C7A5B" opacity="0.52"/>
+      <circle cx="470" cy="245" r="1.8" fill="#FFFFFF" opacity="0.72"/>
+    </g>
+
+    <path d="M 378 195 Q 372 170 364 158" stroke="#3A420E" stroke-width="2" stroke-linecap="round"/>
+    <g transform="rotate(-12 360 144)">
+      <ellipse cx="360" cy="144" rx="14.5" ry="20.5" fill="url(#oliveDeep2)" stroke="#080705" stroke-width="1.2"/>
+      <ellipse cx="355" cy="137" rx="4.4" ry="7.8" fill="#8C7A5B" opacity="0.52"/>
+      <circle cx="354" cy="135" r="1.8" fill="#FFFFFF" opacity="0.72"/>
+    </g>
+  </g>
+</svg>
